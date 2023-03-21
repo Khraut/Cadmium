@@ -23,7 +23,7 @@ jobs:
         run: |
           ls
           cp cadmium-configs/config-arm64-debian config
-          sudo ./build-all arm64-debian.img 3G
+          sudo ./build-all arm64-debian.img 2G
        
       - name: Upload artifacts
         uses: actions/upload-artifact@v2.2.2
