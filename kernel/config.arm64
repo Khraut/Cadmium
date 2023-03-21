@@ -7009,6 +7009,6 @@ CONFIG_ARCH_USE_MEMTEST=y
 # CONFIG_MEMTEST is not set
 # end of Kernel Testing and Coverage
 
-# CONFIG_LRU_GEN=y
-# CONFIG_LRU_GEN_ENABLED=y
+CONFIG_LRU_GEN=y
+CONFIG_LRU_GEN_ENABLED=y
 # end of Kernel hacking
