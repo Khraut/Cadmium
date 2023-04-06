@@ -60,7 +60,7 @@ jobs:
 #           path: arm32-debian.img
 
    build-arch-arm-64:
-     runs-on: ubuntu-20.04
+     runs-on: ubuntu-latest
      steps:
        - uses: actions/checkout@v2
        - name: set up environment
@@ -71,7 +71,8 @@ jobs:
            sudo apt-get upgrade
            sudo apt -y install libunwind-dev
            sudo apt -y build-dep linux
-           sudo apt install --reinstall bindgen
+           sudo aptitude install gcc-12
+           sudo aptitude install bindgen
            sudo apt -f install llvm-dev libclang-dev clang arch-install-scripts gcc-arm-linux-gnueabihf libarchive-tools curl wget f2fs-tools cgpt vboot-utils libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf qemu-user-static gcc-aarch64-linux-gnu debootstrap binutils-aarch64-linux-gnu git u-boot-tools binfmt-support lz4 
           
        - name: remove existing config
