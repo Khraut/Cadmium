@@ -80,7 +80,7 @@ jobs:
          run: |
            ls
            cp cadmium-configs/config-arm64-arch config
-           sudo ./build-all arm64-arch.img 3G
+           sudo ./build-all arm64-arch.img 6G
        - name: Upload artifacts
          uses: actions/upload-artifact@v2.2.2
          with:
