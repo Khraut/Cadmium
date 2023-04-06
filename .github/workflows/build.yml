@@ -68,7 +68,8 @@ jobs:
            cd $GITHUB_WORKSPACE
            echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ lunar main restricted' | sudo tee -a /etc/apt/sources.list
            sudo apt -y update
-           sudo apt-get upgrade
+           sudo apt install devscripts equivs
+           sudo mk-build-deps --install --root-cmd sudo --remove
            sudo apt -y install libunwind-dev
            sudo apt -y build-dep linux
            sudo aptitude install gcc-12
