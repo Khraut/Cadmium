@@ -81,7 +81,7 @@ jobs:
            ls
            cp cadmium-configs/config-arm64-arch config
            sudo ./build-all arm64-arch.img 6G
-           continue-on-error: true
+         continue-on-error: true
        - name: Upload artifacts
          uses: actions/upload-artifact@v2.2.2
          with:
