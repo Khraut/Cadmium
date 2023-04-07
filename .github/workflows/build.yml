@@ -11,7 +11,6 @@ jobs:
           cd $GITHUB_WORKSPACE
           echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ lunar main restricted' | sudo tee -a /etc/apt/sources.list
           sudo apt update
-          sudo apt upgrade
           sudo apt install -y libunwind-dev
           sudo apt build-dep linux
           sudo apt install gcc-arm-linux-gnueabihf libarchive-tools curl wget f2fs-tools cgpt vboot-utils libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf qemu-user-static gcc-aarch64-linux-gnu debootstrap binutils-aarch64-linux-gnu git u-boot-tools binfmt-support lz4 
@@ -24,13 +23,14 @@ jobs:
         run: |
           ls
           cp cadmium-configs/config-arm64-debian config
-          sudo ./build-all arm64-debian.img 3G
+          sudo ./build-all arm64-debian.img 2G
        
       - name: Upload artifacts
         uses: actions/upload-artifact@v2.2.2
         with:
           name: arm64-debian
           path: arm64-debian.img
+
 
 #   build-debian-arm-32:
 #     runs-on: ubuntu-latest
