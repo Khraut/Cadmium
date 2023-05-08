@@ -66,7 +66,7 @@ jobs:
        - name: set up environment
          run: |
            cd $GITHUB_WORKSPACE
-           echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ jammy main restricted universe' | sudo tee -a /etc/apt/sources.list
+           echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ jammy main restricted' | sudo tee -a /etc/apt/sources.list
            sudo apt update
            sudo apt install -y libunwind-dev
            sudo apt build-dep linux
@@ -80,7 +80,7 @@ jobs:
          run: |
            ls
            cp cadmium-configs/config-arm64-arch config
-           sudo ./build-all arm64-arch.img 6G
+           sudo ./build-all arm64-arch.img 4G
          continue-on-error: true
        - name: Upload artifacts
          uses: actions/upload-artifact@v2.2.2
