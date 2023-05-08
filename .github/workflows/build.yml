@@ -172,7 +172,7 @@ jobs:
 #          name: arm32-void
 #          path: arm32-void.img
 
-    build-void-musl-arm-64:
+  build-void-musl-arm-64:
      runs-on: ubuntu-latest
      steps:
        - uses: actions/checkout@v2
