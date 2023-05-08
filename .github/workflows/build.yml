@@ -66,9 +66,7 @@ jobs:
        - name: set up environment
          run: |
            cd $GITHUB_WORKSPACE
-           echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ lunar main restricted' | sudo tee -a /etc/apt/sources.list
-           sudo add-apt-repository universe
-           sudo add-apt-repository multiverse
+           echo 'deb-src http://azure.archive.ubuntu.com/ubuntu/ lunar main multiverse restricted universe' | sudo tee -a /etc/apt/sources.list
            sudo apt update
            sudo apt install -y libunwind-dev
            sudo apt build-dep linux
